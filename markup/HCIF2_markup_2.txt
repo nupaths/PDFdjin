@@ -1,0 +1,1 @@
+Group Contract Number,174,137,Certificate Number,435,137,Employee Last and Given Name,233,160,Date Of Birth,617,160,Employee Address,151,184,Alt Plan Spouse and Children - Yes,505,264,Alt Plan Spouse and Children - No,547,263,Spouses DOB,288,290,Insurance Number or Policy,346,316,Accident Expense? - Yes,258,341,Accident Expense? - No,300,341,If Yes Date Of Accident,178,366

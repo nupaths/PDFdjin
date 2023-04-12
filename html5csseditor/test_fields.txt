@@ -1,0 +1,16 @@
+Provider's Name
+Does Not Apply
+Name of Patient
+Age
+Month and Year - Occurance
+Month and year - Lawsuit
+Insurance Carrier
+Primary Defendant
+Co-Defendant
+Other
+List other Defendants
+List other Defendants
+Patient's Outcome
+How alleged harm/injury
+Specifics in Ref to adverse
+What is/was role in event

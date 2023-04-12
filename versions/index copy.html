@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"
+        integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        // setUp()
+
+        function setUp() {
+            let cart = ['contract_number', 135, 87,
+                'certificate_number', 335, 87,
+                'last_and_given_name', 175, 104,
+                'date_of_birth', 475, 104,
+                'employee_address', 105, 120,
+                'spouses_date_of_birth', 220, 199,
+                'insurance_number', 260, 219
+
+            ]
+
+
+
+            console.log('in here!')
+            var img = new Image();
+            img.src = 'HCIF.jpg';
+            img.onload = function () {
+                var ctx = document.getElementById('ctx').getContext('2d');
+                ctx.drawImage(img, 0, 0);
+
+                ctx.font = "12px Arial";
+                // var contract = document.getElementById('contract_number').value
+                // ctx.fillText(contract, 135, 87);
+                // var certificate = document.getElementById('certificate_number').value
+                // ctx.fillText(certificate, 335, 87);
+                // var last_and_given_name = document.getElementById('last_and_given_name').value
+                // ctx.fillText(last_and_given_name, 175, 104);
+                // var date_of_birth = document.getElementById('date_of_birth').value
+                // ctx.fillText(date_of_birth, 475, 104);
+                // var employee_address = document.getElementById('employee_address').value
+                // ctx.fillText(employee_address, 105, 120);
+
+                for (i = 0; i < cart.length; i += 3) {
+
+                    var value = document.getElementById(cart[i]).value
+                    ctx.fillText(value, cart[i + 1], cart[i + 2])
+
+                };
+            }
+        }
+
+
+        var div = document.querySelector("#ctx")
+
+        function generatePdf() {
+            var imgData;
+            html2canvas($("#ctx"), {
+                userCORS: true,
+                onrendered: function (canvas) {
+                    imgData = canvas.toDataURL('image/png');
+                    //make the pdf document jspdf
+                    var doc = new jsPDF('p', 'pt', 'a4');
+                    doc.addImage(imgData, 'PNG', 10, 10);
+
+                    //save the pdf document
+                    doc.save('same-file.pdf');
+                    window.open(imgData)
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+
+    <canvas id="ctx" width="612" height="792"></canvas>
+
+
+    <button onclick="generatePdf()">Save PDF</button>
+    <div id="formBuilder">
+        <div id="showBar" class="center" style="display:none">
+            <button id="myT" class="center" onmousedown="showBar()">SHOW</button>
+        </div>
+
+        <div id="controlBar" class="center">
+            <div id="instructions">
+
+                <form>
+
+
+                    <p>
+                        <label for="contract_number">Contract Number:</label>
+                        <input type="text" id="contract_number" name="contract_number">
+                    </p>
+                    <p>
+                        <label for="certificate_number">Certificate Number:</label>
+                        <input type="text" id="certificate_number" name="certificate_number">
+                    </p>
+                    <p>
+                        <label for="last_&_given_name">Last & Given Name:</label>
+                        <input type="text" id="last_and_given_name" name="last_and_given_name">
+                    </p>
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="text" id="date_of_birth" name="date_of_birth">
+                    <p>
+                        <label for="employee_address">Employee Address:</label>
+                        <input type="text" id="employee_address" name="employee_address">
+                    </p>
+                    <p>
+                        <label for="spouses_date_of_birth">Spouse's Date Of Birth:</label>
+                        <input type="text" id="spouses_date_of_birth" name="spouses_date_of_birth">
+                    </p>
+                    <p>
+                        <label for="insurance_number">Insurance Number/Policy Number:</label>
+                        <input type="text" id="insurance_number" name="insurance_number">
+                    </p>
+
+                    <p>
+                        <label for="insurance_number">Is Expense Result of Accident:</label>
+                        <input type="text" id="spouses_date_of_birth" name="spouses_date_of_birth">
+                    </p>
+
+                    <p>
+                        <label for="insurance_number">Is Claim for Child Under:</label>
+                        <input type="text" id="spouses_date_of_birth" name="spouses_date_of_birth">
+                    </p>
+                    <!-- <div id="controlBar">
+                        <input type="file" id="fileToLoad"><br>
+                        <div id="inputTextToSave"></div>
+                        <div id="fileToLoad"></div>
+
+                        <label for="media">Summary:</label>
+                        </textarea>Enter text here...
+                        <textarea name="summary" id="summary" name="summary"></textarea> -->
+                    <br>
+                    <button type="button" onclick="setUp()">SUBMIT</button>
+                </form>
+                <button id="myT" class="center" onmousedown="hideBar()">HIDE</button>
+            </div>
+            <div id="showBar" class="center" style="display:none">
+                <button id="myT" class="center" onmousedown="showBar()">SHOW</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

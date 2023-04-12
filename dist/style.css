@@ -1,0 +1,41 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+
+}
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: transparent;
+    text-align: left;
+    border: 1px solid #f70404;
+    background-color: whitesmoke;
+    font-size:12;
+}
+#mydivheader {
+    cursor: move;
+    z-index: 10;
+    background-color: white;
+    color: red;
+    
+}
+#content{
+  display:none;
+  overflow: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* #scrollable-content {
+  height: 180px;
+  overflow: auto;
+  background-color: blue;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} */
+
+
+

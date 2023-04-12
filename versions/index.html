@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"
+        integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+    <canvas id="ctx" width="1224" height="792" draggable="true"></canvas>
+
+
+    <button onclick="generatePdf()">Save PDF</button>
+    <div id="formBuilder">
+        <div id="showBar" class="center" style="display:none">
+            <button id="myT" class="center" onmousedown="showBar()">SHOW</button>
+        </div>
+
+        <div id="controlBar" class="center">
+            <div id="instructions">
+
+                <form>
+
+
+
+                </form>
+                <button id="myT" class="center" onmousedown="hideBar()">HIDE</button>
+            </div>
+            <div id="showBar" class="center" style="display:none">
+                <button id="myT" class="center" onmousedown="showBar()">SHOW</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    let cart = []
+
+    load_url()
+    async function load_url() {
+        let cart2 = (await fetch("/HCIF5_markup.csv")).text();
+        let cart3 = await (cart2).text
+        //  var lines = this.response.split(',');
+        console.log(cart2);
+
+        cart = await cart3.text
+        console.log(await cart)
+        // return cart
+    }
+    //below is the cartesian or the cart array, this determines where on the form the information will be placed
+    // the cart array also creates the form with places to input values as well as field labels
+    let cart = [
+        "Spacing", 23, 23,
+        'Member ID', 13, 43,  //three corresponding values 1. name of field 2. width 3. height
+        'Group Number', 503, 43,
+        "Spacing", 0, 0,
+        'Last and Given Name', 10, 124,
+        "Spacing", 23, 23,
+        'Date Of Birth', 425, 122,
+        "Spacing", 0, 0,
+        'Employee Address', 10, 167,
+        'City', 10, 217,
+        "Spacing", 23, 23,
+        'State', 254, 217,
+        'ZIP Code', 309, 217,
+        "Spacing", 22, 22,
+        'Phone', 20, 272,
+        'Gender - Male', 440, 165,
+        'Gender - Female', 440, 182,
+        'New Address - Yes', 438, 232,
+        'New Address - No', 438, 252,
+        'Relationship - Subscriber', 547, 176,
+        'Relationship - Spouse', 547, 193,
+        'Relationship - Child', 547, 209,
+        'Relationship - Other', 547, 229,
+        "Spacing", 0, 0,
+        'Employee Name', 10, 375,
+        'Employee Home Address', 10, 423,
+        'Employee City', 10, 467,
+        "Spacing", 25, 25,
+        'Employee State', 265, 471,
+        'Employee ZIP Code', 337, 471,
+        "Spacing", 22, 22,
+        'Employee Phone Number', 432, 374,
+        'Employee Date of Birth', 427, 423,
+        'Employee New Address - Yes', 465, 465,
+        'Employee New Address - No', 465, 481,
+        "Spacing", 0, 0,
+        'Provider Name', 10, 560,
+        'Provider Tax ID#', 230, 560,
+        'Provider Address', 10, 602,
+        'Provider City', 10, 645,
+        "Spacing", 23, 23,
+        'Provider State', 224, 647,
+        'Provider ZIP Code', 283, 647,
+        'Date of Accident', 429, 567,
+        "Spacing", 0, 0,
+        'Type of Accident - Work', 533, 593,
+        'Type of Accident - Auto', 586, 593,
+        'Type of Accident - Other', 635, 593,
+        'How Did Accident Happen', 433, 632,
+        'Patient Alternative Coverage - Yes', 302, 712,
+        'Patient Alternative Coverage - No', 345, 712,
+        'Name of Person Covering Patient', 10, 757,
+        'Policy Number', 240, 757,
+        "Spacing", 23, 23,
+        'Date of Birth', 422, 762,
+
+    ]
+    //create the form field from the cart array
+    for (i = 0; i < cart.length; i += 3) {      //jumps of three to advance the record
+
+        if (cart[i] == "Spacing") { }
+        else {
+
+            document.getElementById('instructions').innerHTML += `<p>
+                        <label for="${cart[i]}">${cart[i]}</label>
+                        <input type="${cart[i]}" id="${cart[i]}" name="${cart[i]}">
+                    </p>`
+        }
+    }
+    //below is the submit button that must be added to the end of the form field
+    document.getElementById('instructions').innerHTML += `       <br>
+                    <button type="button" onclick="setUp()">SUBMIT</button>`
+
+    function setUp() {
+
+        console.log('in here!')
+        var img = new Image();
+        img.src = 'HCIF5.jpg';
+        img.onload = function () {
+            var ctx = document.getElementById('ctx').getContext('2d');
+            ctx.width = this.naturalWidth;
+            ctx.height = this.naturalHeight;
+            ctx.drawImage(img, 0, 0);
+
+
+            ctx.font = "24px Arial";
+
+            for (i = 0; i < cart.length; i += 3) {
+
+                //below is the routine for placing the characters in character boxes
+                if (cart[i] == "Spacing") {
+                    space = Number(cart[i + 1])
+                    console.log('Space = ' + space)
+                } else {
+
+                    if (space > 0) {
+
+                        let addSpace = 0
+
+                        cartSplitterValue = document.getElementById(cart[i]).value
+                        cartSplitter = cartSplitterValue.split("")
+
+                        for (ii = 0; ii < cartSplitter.length; ii++) {
+                            ctx.fillText(cartSplitter[ii], (cart[i + 1] + addSpace), cart[i + 2])
+                            addSpace += space
+
+
+                        }
+
+
+                    } else {
+                        //above is the routine for placing the characters in character boxes
+
+                        var value = document.getElementById(cart[i]).value
+                        ctx.fillText(value, cart[i + 1], cart[i + 2])
+                    }
+
+
+                    console.log('in here with the create new canvas function')
+                    var buffer = document.createElement('canvas');
+                    xWidth = 270;
+                    yHeight = 35;
+                    buffer.width = xWidth;//set buffer width and buffer height with the size of the cart[i+1] and cart[i+2]
+                    buffer.height = yHeight;
+                    var b_ctx = buffer.getContext('2d');
+
+                    var imgData = ctx.getImageData(cart[i + 1] - 25, cart[i + 2] - 25, cart[i + 1] + xWidth, cart[i + 2] + yHeight);
+
+                    b_ctx.putImageData(imgData, 0, 0);
+                    document.body.appendChild(buffer);
+                }
+
+            };
+        }
+    }
+
+
+    var div = document.querySelector("#ctx")
+
+    function generatePdf() {
+        var imgData;
+        html2canvas($("#ctx"), {
+            userCORS: true,
+            onrendered: function (canvas) {
+                imgData = canvas.toDataURL('image/png');
+                //make the pdf document jspdf
+                var doc = new jsPDF('p', 'pt', 'a4');
+                doc.addImage(imgData, 'PNG', 10, 10);
+
+                //save the pdf document
+                doc.save('same-file.pdf');
+                window.open(imgData)
+            }
+        })
+    }
+
+        //below is the attempt at reading the array in from a file should be pretty straightforward 
+
+        // console.log(await cart[30])
+        // return cart
+    //}
+    // }
+
+
+    //}
+
+
+    //Above is the function that handles reading the array from a file 
+</script>
+
+</html>

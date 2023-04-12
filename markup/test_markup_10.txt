@@ -1,0 +1,1 @@
+Provider's Name,12,375,Does Not Apply,879,252,Name of Patient,12,374,Age,245,376,Month and Year - Occurance,325,375,Month and year - Lawsuit,517,376,Funsurance Carrier,686,375,Primary Defendant,20,443,Co-Defendant,209,444,Other,23,464,List other Defendants,438,447,List other Defendants,434,484

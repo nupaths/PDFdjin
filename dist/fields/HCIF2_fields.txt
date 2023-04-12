@@ -1,0 +1,13 @@
+Group Contract Number
+Certificate Number
+Employee Last and Given Name
+Date Of Birth
+Employee Address
+Alt Plan Spouse and Children - Yes
+Alt Plan Spouse and Children - No
+Spouses DOB
+Insurance Number or Policy
+Accident Expense? - Yes
+Accident Expense? - No
+If Yes Date Of Accident
+

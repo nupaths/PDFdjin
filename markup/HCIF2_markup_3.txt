@@ -1,0 +1,1 @@
+Group Contract Number,174,139,Certificate Number,435,139,Employee Last and Given Name,231,162,Date Of Birth,615,163,Employee Address,147,186,Alt Plan Spouse and Children - Yes,505,265,Alt Plan Spouse and Children - No,548,264,Spouses DOB,287,290

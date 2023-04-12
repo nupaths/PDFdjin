@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Field Marker</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- <link rel="stylesheet" href="./snackbar.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type='text/javascript'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js'></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script> -->
+</head>
+
+<!-- <body> -->
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+
+
+
+<body>
+
+  <div id="mydiv">
+    <div id="mydivheader">Top/Left</div>
+    <div id="topButtons">
+      <button class="myButton" id="toggle">TOGGLE</button>
+      <button class="myButton" id="toggle1">ADD PLACEMENT</button>
+
+    </div>
+    <div id="content">
+      <div id="scrollable-content">
+        <div id="form_fields" class="groove"></div>
+        <form name="thisform">
+          <!-- <!the text area below is important and is linked to a button remove it at your peril> -->
+          <textarea id="inputTextToSave" name="note"
+            style="width:262px;height:56px;background-color: rgba(240, 239, 239, 0.486);"></textarea><br>
+        </form>
+
+
+        <!-- <button id="a"
+              onclick="insertAtCursor(document.thisform.note, '    top:'+document.getElementById('mydiv').style.top+'\;')">TOP</a><br> -->
+        <!-- <button id="a"
+                onclick="insertAtCursor(document.thisform.note, '    left:'+document.getElementById('mydiv').style.left+'\;')">LEFT</a><br> -->
+
+        <!-- <button id="inputFileNameToSaveAs"></button>FFFFF<br> -->
+        <input type="file" class="custom-file-input" id="fileToLoad" style="width:600px">
+        <button class="myButton" onclick="loadFileAsText()"> LOAD IMAGE FILE </button><br>
+
+        <!-- <a href="#" class="myButton">facebook</a> -->
+
+        <button class="myButton" id="a" onclick="addToEditWindow()">LOAD COORDINATES</button><br>
+        <!-- <br> -->
+        <button class="myButton" onclick="saveTextAsFile()">SAVE FILE</button><br>
+        <!-- <button class="myButton" onclick="spawnWindow()">SPAWN WINDOW</button><br> -->
+        
+        </p>
+        </button>
+      </div>
+      <!-- </div> -->
+    </div>
+
+    </p>
+
+  </div>
+
+
+  </canvas>
+  <canvas id="ctx" draggable="true" height="2400" width="2400"></canvas>
+  <!-- replace with image.src -->
+
+  <!-- <body background="HCIF5.jpg"> -->
+  <!-- <div id="cxt"> -->
+
+  <!-- <body background="HCIF2.jpg"> -->
+
+
+  <h1></h1>
+
+  <div id="nextfield"></div>
+</body>
+<script src="./script.js"></script>
+
+</html>
+<!-- partial -->
+
+
+</body>
+
+</html>

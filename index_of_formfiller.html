@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles_formfiller.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"
+        integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+    <canvas id="ctx" width="2000" height="1500" draggable="true"></canvas>
+
+
+    <button class="myButton" onclick="generatePdf()">Save PDF</button>
+    <div id="formBuilder">
+
+        <div id="showBar" class="center" style="display:none">
+            <button id="myR" class="myButton" onmousedown="showBar()">SHOW</button>
+        </div>
+
+        <div id="controlBar" class="center">
+            <div id="instructions">
+                <!-- <a href="#" class="myButton">I'm in Here</a> -->
+                <input type="file" id="fileToLoad">
+                <button class="myButton" onclick="loadFileAsText()">LOAD FILE</button><br>
+
+                <textarea id="inputTextToSave" name="note" style="width:200px;height:56px"></textarea><br>
+                <button class="myButton" id="myS">LOAD FORM</button>
+                <form>
+
+                </form>
+                <!-- <button id="myT" class="center" onmousedown="hideBar()">HIDE</button> -->
+            </div>
+            <div id="showBar" class="center" style="display:none">
+                <button class="myButton" id="myT" onmousedown="showBar()">SHOW</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script type="text/javascript">
+    let fullPathHolder = ""
+    function hideBar() {
+
+    }
+    function showBar() {
+
+    }
+
+    function loadFileAsText() {
+        var fileToLoad = document.getElementById("fileToLoad").files[0];
+        var fullPathPreSplit = document.getElementById('fileToLoad').value;
+        var fullPath1 = fullPathPreSplit.split(/(\\|\/)/g).pop()
+        var fullPath = fullPath1.split("_")
+        console.log("fileToLoad = " + fullPath[0])
+        fullPathHolder = fullPath[0]
+        var fileReader = new FileReader();
+        fileReader.onload = function (fileLoadedEvent) {
+            var textFromFileLoaded = fileLoadedEvent.target.result;
+            console.log(textFromFileLoaded);
+            document.getElementById("inputTextToSave").value = textFromFileLoaded;
+            //we can work in here to preprocess the input.  In this way we can create fields that 
+            //can be filled or prepopulated
+            //
+            //   document.getElementById('instructions').innerHTML += `<p>
+            //   <label for="${cart[i]}">${cart[i]}</label>
+            //   <input type="${cart[i]}" id="${cart[i]}" name="${cart[i]}">
+            // </p>`
+
+
+
+
+        };
+        fileReader.readAsText(fileToLoad, "UTF-8");
+    }
+    let cart = []
+    async function load_url() {
+        //const response = await fetch("/HCIF5_markup.csv").text;
+        // var fileToLoad = document.getElementById("fileToLoad").files[0];
+        // const response = await fetch("/HCIF5_markup.csv")
+
+        const response = await fetch(fileToLoad)
+        const cart3 = await response.text()
+        const cart4 = await cart3.split(',')
+        console.log(cart4)
+        return (cart4)
+    }
+    // document.addEventListener("DOMContentLoaded", async () => {
+    document.getElementById("myS").addEventListener("click", async () => {
+        console.log("I'm in here!!!")
+        let cart4 = []
+        try {
+            // cart4 = await load_url()
+            cart4 = document.getElementById("inputTextToSave").value.split(",")
+        } catch (e) {
+            console.log("Error!");
+            console.log(e);
+        }
+        console.log(cart4)
+
+        cart = cart4
+
+        for (i = 0; i < cart.length; i += 3) {      //jumps of three to advance the record
+
+            if (cart[i] == "Spacing") { }
+            else {
+
+                document.getElementById('instructions').innerHTML += `<p>
+                        <label for="${cart[i]}">${cart[i]}</label>
+                        <input type="${cart[i]}" id="${cart[i]}" name="${cart[i]}">
+                    </p>`
+            }
+        }
+        //below is the submit button that must be added to the end of the form field
+        document.getElementById('instructions').innerHTML += `       <br>
+                    <button type="button" onclick="setUp()">SUBMIT</button>`
+    })
+
+    function setUp() {
+        //cart = data
+        let space = 0
+        console.log('in here!')
+        var img = new Image();
+        //var fileToLoad = document.getElementById("fileToLoad").files[0];
+        // img.src = 'HCIF5.jpg';//switch this to fileToLoad + jpg
+        var fileToLoad = document.getElementById("fileToLoad").files[0];
+        var fullPathPreSplit = document.getElementById('fileToLoad').value;
+        var fullPath1 = fullPathPreSplit.split(/(\\|\/)/g).pop()
+        var fullPath = fullPath1.split("_")
+        console.log("fileToLoad =" + fullPath[0])
+        img.src = "images/" + fullPathHolder + ".jpg"
+        img.onload = function () {
+            var ctx = document.getElementById('ctx').getContext('2d');
+            ctx.width = this.naturalWidth;
+            ctx.height = this.naturalHeight;
+            ctx.drawImage(img, 0, 0);
+
+
+            ctx.font = "24px Arial";
+
+            for (i = 0; i < cart.length; i += 3) {
+
+                //below is the routine for placing the characters in character boxes
+                if (cart[i] == "Spacing") {
+                    space = Number(cart[i + 1])
+                    console.log('Space = ' + space)
+                } else {
+
+                    if (space > 0) {
+
+                        let addSpace = 0
+
+                        cartSplitterValue = document.getElementById(cart[i]).value
+                        cartSplitter = cartSplitterValue.split("")
+
+                        for (ii = 0; ii < cartSplitter.length; ii++) {
+                            ctx.fillText(cartSplitter[ii], (Number(cart[i + 1]) + addSpace), Number(cart[i + 2]))
+                            addSpace += space
+
+
+                        }
+
+
+                    } else {
+                        //above is the routine for placing the characters in character boxes
+
+                        var value = document.getElementById(cart[i]).value
+                        ctx.fillText(value, cart[i + 1], cart[i + 2])
+                    }
+
+
+                    console.log('in here with the create new canvas function')
+                    var buffer = document.createElement('canvas');
+                    xWidth = 270;
+                    yHeight = 35;
+                    buffer.width = xWidth;//set buffer width and buffer height with the size of the cart[i+1] and cart[i+2]
+                    buffer.height = yHeight;
+                    var b_ctx = buffer.getContext('2d');
+
+                    var imgData = ctx.getImageData(Number(cart[i + 1]) - 25, Number(cart[i + 2]) - 25, Number(cart[i + 1]) + xWidth, Number(cart[i + 2]) + yHeight);
+
+                    b_ctx.putImageData(imgData, 0, 0);
+                    document.body.appendChild(buffer);
+                }
+
+            };
+        }
+    }
+    // })
+
+    var div = document.querySelector("#ctx")
+
+    function generatePdf() {
+        var imgData;
+        html2canvas($("#ctx"), {
+            userCORS: true,
+            onrendered: function (canvas) {
+                imgData = canvas.toDataURL('image/png');
+                //make the pdf document jspdf
+                var doc = new jsPDF('p', 'pt', 'a4');
+                doc.addImage(imgData, 'PNG', 10, 10);
+
+                //save the pdf document
+                doc.save('same-file.pdf');
+                window.open(imgData)
+            }
+        })
+    }
+
+</script>
+
+</html>

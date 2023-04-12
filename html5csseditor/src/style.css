@@ -1,0 +1,20 @@
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: transparent;
+    text-align: left;
+    border: 1px solid #f70404;
+    background-color: whitesmoke;
+    font-size:16;
+}
+#mydivheader {
+    cursor: move;
+    z-index: 10;
+    background-color: white;
+    color: red;
+    
+}
+#content{
+  display:none;
+}

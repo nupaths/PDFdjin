@@ -1,0 +1,20 @@
+Member ID
+Group Number
+Name
+Home Address
+City
+State
+Zip Code
+Gender - M
+Gender - F
+Relationship - Subscriber
+Relationship - Partner/spouse
+Child
+Other
+New Address - Y
+New Address - N
+Phone
+Employee Name
+Phone
+Home Address 
+Date Of Birth
