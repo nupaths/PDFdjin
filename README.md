@@ -1,4 +1,5 @@
 # PDFdjin
+Lauren updated current Readme file for purpose of exercise 
 Create fields on a pdf file.   
 Create dynamic forms that allow client to fill out a fields of a form and (download) as a pdf file.
 
