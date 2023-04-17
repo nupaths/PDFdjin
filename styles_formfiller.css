@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
       sans-serif;
@@ -6,6 +12,59 @@ body {
     line-height: 1.5;
   }
   
+
+  .flex-container {
+    background-image: radial-gradient(#FFFFFF, #7673dd);
+    border: 4px solid #FF6600;
+    display: flex;
+    flex-flow: row wrap;
+   
+    
+}
+    
+
+.flex-child {
+    width: 33.3%;
+    height: 35vh;
+    border: .2rem solid #FF6600;
+    padding: 2%;
+       text-align: center;
+   
+   
+  }
+       
+
+
+.flex-header {
+    color: white;
+   text-shadow: 2px 2px black;
+    width: 100vw;
+    /* text-align: center; */
+    /* margin: 10vh auto; */
+    height: auto;
+    /* justify-self: revert; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh;
+}
+
+.boxoneimage {
+  height: 120%;
+  padding-bottom: 20px;
+
+}
+
+.officegroup-photo {
+  height: 120%;
+  padding-bottom: 20px;
+  
+}
+
+.submit-form {
+  margin-top: 10px;
+  text-align: center;
+}
   form  { display: table;      }
   p     { display: table-row;  }
   label { display: table-cell; }
@@ -66,11 +125,11 @@ body {
   }
 
   .myButton {
-    box-shadow:inset 0px 1px 0px 0px #cf866c;
-    background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
-    background-color:#d0451b;
+    box-shadow:inset 0px 1px 0px 0px #797EF6;
+    background:linear-gradient(to bottom, #797EF6  5%, #797EF6  100%);
+    background-color:#797EF6;
     border-radius:3px;
-    border:1px solid #942911;
+    border:1px solid #797EF6;
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
@@ -78,11 +137,11 @@ body {
     font-size:13px;
     padding:6px 24px;
     text-decoration:none;
-    text-shadow:0px 1px 0px #854629;
+    text-shadow:0px 1px 0px black;
   }
   .myButton:hover {
-    background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
-    background-color:#bc3315;
+    background:linear-gradient(to bottom, #797EF6 5%, purple 100%);
+    background-color:#797EF6;
   }
   .myButton:active {
     position:relative;

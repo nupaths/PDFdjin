@@ -22,35 +22,76 @@
 
 <body>
 
-    <canvas id="ctx" width="2000" height="1500" draggable="true"></canvas>
+    <section class="flex-container">
+        <h1 class="flex-header">The Local Municipality Board Form</h1>
+        <section class="flex-child">
+            <!-- <h2>
+                The Local Municipality  Board Invites You. . .
+            </H2> -->
+            <img class="boxoneimage" src="images/officedude.jpg" alt="Genie-Costume">
+        </section>
 
+        <section class="flex-child">
+            <h2>
+                The Local Municipality Board Invites You . . .
+            </H2>
+        </section>
 
-    <button class="myButton" onclick="generatePdf()">Save PDF</button>
-    <div id="formBuilder">
+        <section class="flex-child">
+          
+        </section>
 
-        <div id="showBar" class="center" style="display:none">
-            <button id="myR" class="myButton" onmousedown="showBar()">SHOW</button>
-        </div>
+        <section class="flex-child">
+            <h2>
+               How can I submit forms for my local Municipality?
+            </H2>
+            <p>Local Residents have many options to download and submit their completed forms. Residents can return forms in person, through the mail and through our new electronic online portal process!</p>
+        </section>
 
-        <div id="controlBar" class="center">
-            <div id="instructions">
-                <!-- <a href="#" class="myButton">I'm in Here</a> -->
-                <input type="file" id="fileToLoad">
-                <button class="myButton" onclick="loadFileAsText()">LOAD FILE</button><br>
+        <section class="flex-child">
+           <img class="officegroup-photo" src="images/officegroup.jpg" alt="office workers sitting">
+        </section>
+   
+        <section class="flex-child">
+            <canvas id="ctx" width="2000" height="1500" draggable="true"></canvas>
 
-                <textarea id="inputTextToSave" name="note" style="width:200px;height:56px"></textarea><br>
-                <button class="myButton" id="myS">LOAD FORM</button>
-                <form>
-
-                </form>
-                <!-- <button id="myT" class="center" onmousedown="hideBar()">HIDE</button> -->
+            <button class="myButton" onclick="generatePdf()">Save PDF</button>
+            <div id="formBuilder">
+        
+                <div id="showBar" class="center" style="display:none">
+                    <button id="myR" class="myButton" onmousedown="showBar()">SHOW</button>
+                </div>
+        
+                <div id="controlBar" class="center">
+                    <div id="instructions">
+                        <!-- <a href="#" class="myButton">I'm in Here</a> -->
+                        <input type="file" id="fileToLoad">
+                        <button class="myButton" onclick="loadFileAsText()">LOAD FILE</button><br>
+        
+                        <textarea id="inputTextToSave" name="note" style="width:200px;height:56px"></textarea><br>
+                        <button class="myButton" id="myS">LOAD FORM</button>
+                        <form>
+        
+                        </form>
+                        <!-- <button id="myT" class="center" onmousedown="hideBar()">HIDE</button> -->
+                    </div>
+                    <div id="showBar" class="center" style="display:none">
+                        <button class="myButton" id="myT" onmousedown="showBar()">SHOW</button>
+                    </div>
+                </div>
+        
             </div>
-            <div id="showBar" class="center" style="display:none">
-                <button class="myButton" id="myT" onmousedown="showBar()">SHOW</button>
-            </div>
-        </div>
+                 </section>
 
+
+
+
+    </section>
+    
+    <div class="form-instructions-paragraph">
+<h1 class="submit-form"> Submitting Forms to Your Local Municipality</h1>
     </div>
+   
 </body>
 
 <script type="text/javascript">
