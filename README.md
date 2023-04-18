@@ -1,4 +1,6 @@
-#My First Commit
+# My First Commit
+
+This is a my first commit readme file for our Github my-first-repo. We're learning Markdown.
 This repository shares the completed code for a list of forms.
 
 My Challenge: Utilize the knowledge I have gained from the desk-top tutorial series to build a website for each form.
