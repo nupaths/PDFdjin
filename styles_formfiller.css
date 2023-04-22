@@ -12,10 +12,72 @@ body {
     line-height: 1.5;
   }
   
+  /* a {
+    color: white;
+    font-weight: 400;
+  } */
 
+  .myhomeButton {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 90px;
+    box-shadow:inset 0px 1px 9px 0px #efdcfb;
+    background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+    background-color:#dfbdfa;
+    border-radius:23px;
+    border:3px solid #c584f3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:14px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #9752cc;
+  }
+  .myhomeButton:hover {
+    background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+    background-color:#bc80ea;
+  }
+  .myhomeButton:active {
+    position:relative;
+    top:1px;
+  }
+  
+
+  .myformButton {
+    margin-top: 15px;
+    width: 150px;
+    box-shadow:inset 0px 1px 9px 0px #efdcfb;
+    background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+    background-color:#dfbdfa;
+    border-radius:23px;
+    border:3px solid #c584f3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:14px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #9752cc;
+  }
+  .myhomeButton:hover {
+    background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+    background-color:#bc80ea;
+  }
+  .myhomeButton:active {
+    position:relative;
+    top:1px;
+  }
+h1, h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
   .flex-container {
-    background-image: radial-gradient(#FFFFFF, #7673dd);
-    border: 4px solid #FF6600;
+    /* background-image: radial-gradient(#FFFFFF, #7673dd);
+    border: 4px solid #FF6600; */
     display: flex;
     flex-flow: row wrap;
    
@@ -26,7 +88,7 @@ body {
 .flex-child {
     width: 33.3%;
     height: 35vh;
-    border: .2rem solid #FF6600;
+    /* border: .2rem solid #FF6600; */
     padding: 2%;
        text-align: center;
    
@@ -59,6 +121,16 @@ body {
   height: 120%;
   padding-bottom: 20px;
   
+}
+
+.form-pen {
+  height: 120%;
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .submit-form {
@@ -147,3 +219,161 @@ body {
     position:relative;
     top:1px;
   }
+
+  body,
+html {
+	height: 100%;
+	display: grid;
+
+	background: linear-gradient(to bottom, #edb74c 0%, #d6733a 100%);
+}
+.night {
+	background: linear-gradient(to bottom, #48739b 0%, #2e4494 100%);
+}
+.wrapper {
+	margin: auto;
+	position: relative;
+  /* margin-top: 50px; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.toggle {
+	cursor: pointer;
+	width: 170px;
+	height: 100px;
+	background-color: #dbd9d9;
+	box-shadow: -5px -5px 8px white inset, 8px 8px 8px #9e9d9d inset;
+	border-radius: 50px;
+	border: none;
+	position: relative;
+ /* right: 500px; */
+	margin-right: 0;
+}
+.toggle:focus {
+	outline: none;
+}
+
+.toggle-btn {
+	width: 70px;
+	height: 70px;
+	background-color: #ededed;
+	background: linear-gradient(to bottom, #edb74c 0%, #d6733a 100%);
+	box-shadow: -5px -3px 12px white, 5px 5px 8px #9e9d9d;
+	border-radius: 50px;
+	border: none;
+	position: absolute;
+	bottom: 15px;
+	left: 10%;
+	transition: all 0.5s ease-in;
+}
+.toggle-btn.right {
+	left: 50%;
+	box-shadow: -5px -3px 12px white, 5px 5px 8px #6e6e6e;
+	transition: all 0.5s ease-in;
+	background: linear-gradient(to bottom, #3e688e 0%, #2d375b 100%);
+}
+.toggle.right {
+	box-shadow: -5px -5px 8px white inset, 8px 8px 8px #6e6e6e inset;
+	background-color: #bab8b8;
+}
+.sun .circle {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -24px;
+	right: 10px;
+	border-radius: 60px;
+	box-shadow: 0px 0px 10px orange;
+	background-color: #f2c968;
+}
+.sun {
+	position: relative;
+	top: 0;
+	right: 0;
+	transition: all 0.5s ease-in;
+}
+.sun .triangle {
+	width: 0;
+	position: absolute;
+	height: 0;
+	top: -7px;
+	right: -14px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	transform: rotate(94deg);
+	border-bottom: 25px solid #d6733a;
+}
+.sun .triangle.two {
+	transform: rotate(43deg);
+	top: -36px;
+	right: -4px;
+}
+.sun .triangle.three {
+	transform: rotate(0deg);
+	top: -45px;
+	right: 20px;
+}
+.sun .triangle.four {
+	transform: rotate(-44deg);
+	top: -35px;
+	right: 44px;
+}
+.sun .triangle.five {
+	transform: rotate(-76deg);
+	top: -13px;
+	right: 54px;
+}
+.sun.gone {
+	top: 50px;
+	right: 12px;
+	transition: all 0.5s ease-in;
+}
+.moon {
+	position: relative;
+	top: 50px;
+	left: 0;
+	transition: all 0.5s ease-in;
+}
+.moon .circle {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: -34px;
+	left: 4px;
+	border-radius: 60px;
+	background-color: #bab8b8;
+}
+
+.moon .spot {
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: -24px;
+	left: 14px;
+	border-radius: 60px;
+	background-color: #948d8a;
+	box-shadow: 2px 2px 1px #696462 inset;
+}
+.moon .spot.two {
+	top: -12px;
+	width: 10px;
+	height: 10px;
+	left: 40px;
+}
+.moon .spot.three {
+	top: -3px;
+	width: 8px;
+	height: 8px;
+	left: 13px;
+}
+.moon .spot.four {
+	top: -28px;
+	width: 7px;
+	height: 7px;
+	left: 35px;
+}
+.moon.gone {
+	left: 0;
+	top: 0;
+	transition: all 0.5s ease-in;
+}
