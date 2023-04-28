@@ -21,11 +21,11 @@ body {
     margin-top: 15px;
     margin-left: 15px;
     width: 90px;
-    box-shadow:inset 0px 1px 9px 0px #efdcfb;
-    background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
-    background-color:#dfbdfa;
+    box-shadow:inset 0px 1px 9px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
     border-radius:23px;
-    border:3px solid #c584f3;
+    border:3px solid #337bc4;
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
@@ -34,11 +34,11 @@ body {
     font-weight:bold;
     padding:14px 24px;
     text-decoration:none;
-    text-shadow:0px 1px 0px #9752cc;
+    text-shadow:0px 1px 0px #528ecc;
   }
   .myhomeButton:hover {
-    background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
-    background-color:#bc80ea;
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
   }
   .myhomeButton:active {
     position:relative;
@@ -47,31 +47,33 @@ body {
   
 
   .myformButton {
-    margin-top: 15px;
-    width: 150px;
-    box-shadow:inset 0px 1px 9px 0px #efdcfb;
-    background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
-    background-color:#dfbdfa;
-    border-radius:23px;
-    border:3px solid #c584f3;
+    margin: 20px;
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:6px;
+    border:1px solid #337bc4;
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
     font-family:Arial;
-    font-size:15px;
+    font-size:17px;
     font-weight:bold;
-    padding:14px 24px;
+    padding:14px 44px;
     text-decoration:none;
-    text-shadow:0px 1px 0px #9752cc;
+    text-shadow:0px 1px 0px #528ecc;
   }
-  .myhomeButton:hover {
-    background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
-    background-color:#bc80ea;
+  .myformButton:hover {
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
   }
-  .myhomeButton:active {
+
+  .myformButton:active {
     position:relative;
-    top:1px;
+	top:1px;
   }
+
+  
 h1, h2 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -197,27 +199,51 @@ p {
   }
 
   .myButton {
-    box-shadow:inset 0px 1px 0px 0px #797EF6;
-    background:linear-gradient(to bottom, #797EF6  5%, #797EF6  100%);
+    margin: 20px;
+    box-shadow:inset 0px 1px 0px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff  5%, #79bbff  100%);
     background-color:#797EF6;
-    border-radius:3px;
-    border:1px solid #797EF6;
+    border-radius:23px;
+    border:1px solid #337bc4;
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
     font-family:Arial;
-    font-size:13px;
-    padding:6px 24px;
+    font-size:15px;
+    font-weight: bold;
+    /* padding:6px 24px; */
+    padding:14px 24px;
     text-decoration:none;
-    text-shadow:0px 1px 0px black;
+    text-shadow:0px 1px 0px #528ecc;
   }
   .myButton:hover {
-    background:linear-gradient(to bottom, #797EF6 5%, purple 100%);
-    background-color:#797EF6;
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
   }
   .myButton:active {
     position:relative;
     top:1px;
+  }
+
+
+  .myhomeButton {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 90px;
+    box-shadow:inset 0px 1px 9px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:23px;
+    border:3px solid #337bc4;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:14px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
   }
 
   body,
@@ -377,3 +403,14 @@ html {
 	top: 0;
 	transition: all 0.5s ease-in;
 }
+
+.Online-PDF {
+  /* margin-top: 20px; */
+  text-align: center;
+}
+
+/* .contactDiv {
+  margin: 20px;
+  text-align: center;
+  align-items: center;
+} */
