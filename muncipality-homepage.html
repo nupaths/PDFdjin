@@ -21,7 +21,6 @@
 </head>
 
 <body>
-    <a href="muncipality-homepage.html" class="myhomeButton">Home</a>
     <div class="wrapper">
 		<div class="sun" id="sun">
 			<div class="triangle"></div>
@@ -42,53 +41,69 @@
 			<div class="toggle-btn" id="toggle-btn">
 			</div>
 		</button>
-
-    
-  	</div>
-
-      <div class="Online-PDF">
-        <h1>Online PDF Registration Form Instructions</h1>
-        <ol>
-        <li>Select Choose File to upload the registration form</li>
-        <li>Select Load File to display form fields</li>
-        <li>Then click Load Form and input your information for each field</li>
-        <li>Select Submit and verify all submitted information is correct</li>
-        <li>Scroll down the page and select PDF for your references</li>
-    </ol>
-    </div>
-            <canvas id="ctx" width="1000" height="1500" draggable="true"></canvas>
-
-            <button class="myButton" onclick="generatePdf()">Save PDF</button>
-            <div id="formBuilder">
-        
-                <div id="showBar" class="center" style="display:none">
-                    <button id="myR" class="myButton" onmousedown="showBar()">SHOW</button>
-                </div>
-        
-                <div id="controlBar" class="center">
-                    <div id="instructions">
-                        <h1>Local Form Upload and Fill Out</h1>
-                        <!-- <a href="#" class="myButton">I'm in Here</a> -->
-                        <input type="file" id="fileToLoad">
-                        <button class="myButton" onclick="loadFileAsText()">LOAD FILE</button><br>
-        
-                        <textarea id="inputTextToSave" name="note" style="width:200px;height:56px"></textarea><br>
-                        <button class="myButton" id="myS">LOAD FORM</button>
-                        <form>
-        
-                        </form>
-                        <!-- <button id="myT" class="center" onmousedown="hideBar()">HIDE</button> -->
-                    </div>
-                    <div id="showBar" class="center" style="display:none">
-                        <button class="myButton" id="myT" onmousedown="showBar()">SHOW</button>
-                    </div>
-                </div>
-        
+	</div>
+    <h1 class="flex-header">The Local Municipality Board Form</h1>
+    <div class="form-instructions-paragraph">
+        <h1 class="submit-form"> Submitting Forms to Your Local Municipality</h1>
             </div>
-                
-
-
            
+    <!-- <h1 class="flex-header">
+        The Local Municipality  Board Invites You. . .
+    </h1> -->
+    <section class="flex-container">
+      
+        <section class="flex-child">
+          
+            <img class="boxoneimage" src="images/officedude.jpg" alt="people chatting in the office">
+           
+        </section>
+
+        <section class="flex-child">
+            <!-- <h2>
+                The Local Municipality Board Invites You . . .
+            </H2> -->
+            
+            
+            <img class="officegroup-photo" src="images/officegroup.jpg" alt="office workers sitting">
+          
+        </section>
+
+        <section class="flex-child">
+            <img class="form-pen" src="images/formpen.jpg" alt="person filling out form">
+      
+        </section>
+
+        <section class="flex-child">
+            <h2>
+               How can I submit forms for my local Municipality?
+            </H2>
+            <p>Local Residents have many options to download and submit their completed forms. Residents can return forms in person, through the mail and through our new electronic online portal process!</p>
+        </section>
+
+        <section class="flex-child">
+            <h2>
+                How can I submit forms online?
+             </H2>
+             <p>New! Local residents can now submit forms online using our easy form upload process. Insteading of filling out a pesky paper form, you can now upload a PDF and fill out electronically!</p>
+             <a href="index_of_formfiller.html" class="myformButton">Submit Form</a>
+        </section>
+   
+        <section class="flex-child">
+            <h2>
+                Can I still sign in person at my local Municipality?
+             </H2>
+             <p>Local Residents have many options to download and submit their completed forms. Residents can return forms in person, through the mail and through our new electronic online portal process!</p>
+        </section>
+
+    </section>
+
+    <!-- <div class="contactDiv">
+        <h1>Contact Information</h1>
+        <p>123 Main Street</p>
+        <p>Pittsburgh, PA</p>
+    </div> -->
+    
+ 
 </body>
 
 <script type="text/javascript">

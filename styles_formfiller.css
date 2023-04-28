@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
       sans-serif;
@@ -6,6 +12,133 @@ body {
     line-height: 1.5;
   }
   
+  /* a {
+    color: white;
+    font-weight: 400;
+  } */
+
+  .myhomeButton {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 90px;
+    box-shadow:inset 0px 1px 9px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:23px;
+    border:3px solid #337bc4;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:14px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+  }
+  .myhomeButton:hover {
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
+  }
+  .myhomeButton:active {
+    position:relative;
+    top:1px;
+  }
+  
+
+  .myformButton {
+    margin: 20px;
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:6px;
+    border:1px solid #337bc4;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    font-weight:bold;
+    padding:14px 44px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+  }
+  .myformButton:hover {
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+  }
+
+  .myformButton:active {
+    position:relative;
+	top:1px;
+  }
+
+  
+h1, h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+  .flex-container {
+    /* background-image: radial-gradient(#FFFFFF, #7673dd);
+    border: 4px solid #FF6600; */
+    display: flex;
+    flex-flow: row wrap;
+   
+    
+}
+    
+
+.flex-child {
+    width: 33.3%;
+    height: 35vh;
+    /* border: .2rem solid #FF6600; */
+    padding: 2%;
+       text-align: center;
+   
+   
+  }
+       
+
+
+.flex-header {
+    color: white;
+   text-shadow: 2px 2px black;
+    width: 100vw;
+    /* text-align: center; */
+    /* margin: 10vh auto; */
+    height: auto;
+    /* justify-self: revert; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh;
+}
+
+.boxoneimage {
+  height: 120%;
+  padding-bottom: 20px;
+
+}
+
+.officegroup-photo {
+  height: 120%;
+  padding-bottom: 20px;
+  
+}
+
+.form-pen {
+  height: 120%;
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.submit-form {
+  margin-top: 10px;
+  text-align: center;
+}
   form  { display: table;      }
   p     { display: table-row;  }
   label { display: table-cell; }
@@ -66,25 +199,218 @@ body {
   }
 
   .myButton {
-    box-shadow:inset 0px 1px 0px 0px #cf866c;
-    background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
-    background-color:#d0451b;
-    border-radius:3px;
-    border:1px solid #942911;
+    margin: 20px;
+    box-shadow:inset 0px 1px 0px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff  5%, #79bbff  100%);
+    background-color:#797EF6;
+    border-radius:23px;
+    border:1px solid #337bc4;
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
     font-family:Arial;
-    font-size:13px;
-    padding:6px 24px;
+    font-size:15px;
+    font-weight: bold;
+    /* padding:6px 24px; */
+    padding:14px 24px;
     text-decoration:none;
-    text-shadow:0px 1px 0px #854629;
+    text-shadow:0px 1px 0px #528ecc;
   }
   .myButton:hover {
-    background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
-    background-color:#bc3315;
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
   }
   .myButton:active {
     position:relative;
     top:1px;
   }
+
+
+  .myhomeButton {
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 90px;
+    box-shadow:inset 0px 1px 9px 0px #1564ad;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:23px;
+    border:3px solid #337bc4;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:14px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+  }
+
+  body,
+html {
+	height: 100%;
+	display: grid;
+
+	background: linear-gradient(to bottom, #edb74c 0%, #d6733a 100%);
+}
+.night {
+	background: linear-gradient(to bottom, #48739b 0%, #2e4494 100%);
+}
+.wrapper {
+	margin: auto;
+	position: relative;
+  /* margin-top: 50px; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.toggle {
+	cursor: pointer;
+	width: 170px;
+	height: 100px;
+	background-color: #dbd9d9;
+	box-shadow: -5px -5px 8px white inset, 8px 8px 8px #9e9d9d inset;
+	border-radius: 50px;
+	border: none;
+	position: relative;
+ /* right: 500px; */
+	margin-right: 0;
+}
+.toggle:focus {
+	outline: none;
+}
+
+.toggle-btn {
+	width: 70px;
+	height: 70px;
+	background-color: #ededed;
+	background: linear-gradient(to bottom, #edb74c 0%, #d6733a 100%);
+	box-shadow: -5px -3px 12px white, 5px 5px 8px #9e9d9d;
+	border-radius: 50px;
+	border: none;
+	position: absolute;
+	bottom: 15px;
+	left: 10%;
+	transition: all 0.5s ease-in;
+}
+.toggle-btn.right {
+	left: 50%;
+	box-shadow: -5px -3px 12px white, 5px 5px 8px #6e6e6e;
+	transition: all 0.5s ease-in;
+	background: linear-gradient(to bottom, #3e688e 0%, #2d375b 100%);
+}
+.toggle.right {
+	box-shadow: -5px -5px 8px white inset, 8px 8px 8px #6e6e6e inset;
+	background-color: #bab8b8;
+}
+.sun .circle {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -24px;
+	right: 10px;
+	border-radius: 60px;
+	box-shadow: 0px 0px 10px orange;
+	background-color: #f2c968;
+}
+.sun {
+	position: relative;
+	top: 0;
+	right: 0;
+	transition: all 0.5s ease-in;
+}
+.sun .triangle {
+	width: 0;
+	position: absolute;
+	height: 0;
+	top: -7px;
+	right: -14px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	transform: rotate(94deg);
+	border-bottom: 25px solid #d6733a;
+}
+.sun .triangle.two {
+	transform: rotate(43deg);
+	top: -36px;
+	right: -4px;
+}
+.sun .triangle.three {
+	transform: rotate(0deg);
+	top: -45px;
+	right: 20px;
+}
+.sun .triangle.four {
+	transform: rotate(-44deg);
+	top: -35px;
+	right: 44px;
+}
+.sun .triangle.five {
+	transform: rotate(-76deg);
+	top: -13px;
+	right: 54px;
+}
+.sun.gone {
+	top: 50px;
+	right: 12px;
+	transition: all 0.5s ease-in;
+}
+.moon {
+	position: relative;
+	top: 50px;
+	left: 0;
+	transition: all 0.5s ease-in;
+}
+.moon .circle {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: -34px;
+	left: 4px;
+	border-radius: 60px;
+	background-color: #bab8b8;
+}
+
+.moon .spot {
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: -24px;
+	left: 14px;
+	border-radius: 60px;
+	background-color: #948d8a;
+	box-shadow: 2px 2px 1px #696462 inset;
+}
+.moon .spot.two {
+	top: -12px;
+	width: 10px;
+	height: 10px;
+	left: 40px;
+}
+.moon .spot.three {
+	top: -3px;
+	width: 8px;
+	height: 8px;
+	left: 13px;
+}
+.moon .spot.four {
+	top: -28px;
+	width: 7px;
+	height: 7px;
+	left: 35px;
+}
+.moon.gone {
+	left: 0;
+	top: 0;
+	transition: all 0.5s ease-in;
+}
+
+.Online-PDF {
+  /* margin-top: 20px; */
+  text-align: center;
+}
+
+/* .contactDiv {
+  margin: 20px;
+  text-align: center;
+  align-items: center;
+} */
